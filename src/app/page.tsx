@@ -1,7 +1,8 @@
 "use client";
 
+import SideBar from "@/components/SideBar";
 import { Editor } from "@monaco-editor/react";
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 
 export default function Home() {
   const [pyodide, setPyodide] = useState(null);
@@ -25,20 +26,24 @@ export default function Home() {
   };
 
   return (
-    <div className="grid h-screen grid-cols-3">
-      <div className="col-span-1">HEY</div>
-      <div className="col-span-2">
-        <Editor
-          height={"75vh"}
-          theme="vs-dark"
-          defaultLanguage="python"
-          defaultValue=""
-          value={code}
-          onMount={onMount}
-          onChange={(val) => setCode(val || "")}
-        />
+    <div className="h-screen">
+      <div className="grid grid-cols-6">
+        <div className="col-span-1">
+          <SideBar />
+        </div>
+        <div className="col-span-5">
+          <Editor
+            height={"75vh"}
+            theme="vs-dark"
+            defaultLanguage="python"
+            defaultValue=""
+            value={code}
+            onMount={onMount}
+            onChange={(val) => setCode(val || "")}
+          />
+        </div>
       </div>
-      <button className="bg-green-700 text-white p-3 rounded hover:bg-green-600" onClick={() => runPythonCode(code)}>
+      <button className="bg-green-700 mt-5 text-white p-3 rounded hover:bg-green-500" onClick={() => runPythonCode(code)}>
         RUN
       </button>
     </div>
