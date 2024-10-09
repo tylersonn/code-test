@@ -7,7 +7,7 @@ interface ModalState {
   //   isCreateCategoryModalOpen: boolean;
   isAvatarModalOpen: boolean;
   isForgetPasswordModalOpen: boolean;
-  isConfigModalOpen: boolean;
+  isNotLoggedInModalOpen: boolean;
   //   space: Spaces | null;
 }
 
@@ -25,7 +25,7 @@ const initialState = {
   // isCreateCategoryModalOpen: false,
   isAvatarModalOpen: false,
   isForgetPasswordModalOpen: false,
-  isConfigModalOpen: false,
+  isNotLoggedInModalOpen: false,
   // space: null,
 };
 
