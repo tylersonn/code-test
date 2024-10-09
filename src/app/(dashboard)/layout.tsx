@@ -20,6 +20,7 @@ import { NavItem } from "./nav-item";
 import { VercelLogo } from "@/components/ui/Icons";
 import { SearchInput } from "@/components/Search/Search";
 
+
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <Providers>
