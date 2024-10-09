@@ -2,6 +2,7 @@
 
 import MobileViewMessage from "@/components/mobilemessage/MobileviewMessage";
 import Modal from "@/components/onboarding/Modal";
+import { Logo } from "@/components/ui/Icons";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import useModal from "@/hooks/modal/useModal";
 import { isMobileScreen } from "@/utils/helper";
@@ -56,7 +57,46 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       {isMobileScreen(windowWidth) ? <MobileViewMessage /> : <TooltipProvider>{children}</TooltipProvider>}
 
       <Modal closable open={isNotLoggedInModalOpen} onClose={handleUserKeySet}>
-        <h1 className="text-black">User is Not Logged in</h1>
+        <div className="sm:flex sm:items-start">
+          <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+            {/* <!-- Icon for newsletter --> */}
+            <Logo />
+          </div>
+          <div className="w-full mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+              Unauthenticated user
+            </h3>
+            <div className="mt-2">
+              <p className="text-sm text-gray-500"> Enter your email and secret key to get access!! </p>
+              {/* <!-- Email input --> */}
+              <input
+                type="email"
+                className="mt-2 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                placeholder="name@example.com"
+              />
+              <input
+                type="password"
+                className="mt-2 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-500"
+                placeholder="***"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="px-4 mt-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+          <button
+            type="button"
+            className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+          >
+            Get Access
+          </button>
+
+          <button
+            type="button"
+            className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+          >
+            Cancel
+          </button>
+        </div>
       </Modal>
     </Fragment>
   );

@@ -46,7 +46,7 @@ const Modal = ({ open, onClose, width, children, closable = false, style, classN
         >
           {children}
         </div>
-        {closable && (
+        {/* {closable && (
           <div
             className="fixed z-[1021] cursor-pointer"
             style={{
@@ -55,11 +55,11 @@ const Modal = ({ open, onClose, width, children, closable = false, style, classN
             }}
           >
             <div className=" rounded-full p-2 hover:bg-silver-950" onClick={onClose}>
-              {/* <Image src="/img/vectors/modalclose.svg" alt="Close" width={12} height={12} /> */}
+              
               <XCircleIcon className="w-14 h-14 font-extrabold inline transition-all duration-1000 ease-in" />
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </Fragment>
   );
