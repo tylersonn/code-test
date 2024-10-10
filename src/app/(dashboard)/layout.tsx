@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { HomeIcon, CommandLineIcon, PaintBrushIcon, ShoppingCartIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { HomeIcon, ShoppingBagIcon, PaintBrushIcon, CommandLineIcon } from "@heroicons/react/24/outline";
 
 // import { Button } from "@/components/ui/button";
 // import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -62,7 +63,7 @@ function DesktopNav() {
         </NavItem>
 
         <NavItem href="#" label="Orders">
-          <ShoppingCartIcon className="h-7 w-7" />
+          <ShoppingBagIcon className="h-7 w-7" />
         </NavItem>
 
         <NavItem href="/" label="Products">
